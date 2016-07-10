@@ -26,8 +26,22 @@ void printLinkedList(const Node *head) {
     }
     printf("\n");
 }
-
-
+////////////////////////////////////////////////////////C_STYLE REVERSE_LIST
+/*
+void ReverseList(Node **head){
+    Node *new_head=0;
+    //читаем элементы старого списка
+    for(Node *pos = (*head); pos;){
+    //пихаем в начало нового списка
+        Node *save_next = pos->next;
+        pos->next = new_head;
+        new_head = pos;
+        pos = save_next;
+    }
+    //обновляем голову
+    (*head) = new_head;
+}
+*/
 void ReverseList(Node *&head){
     Node *new_head=0;
     //читаем элементы старого списка
