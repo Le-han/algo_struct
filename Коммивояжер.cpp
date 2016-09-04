@@ -11,10 +11,14 @@ If col[m]=j1 then col[m]:=i1;
 Конец цикла по k.
 4.(вывод). Вывести res1, res2.
 *//
+    #include <iostream>
+#include <vector>
+using namespace std;
+
     #include <stdlib.h>
     #include <time.h>
     #include <stdio.h>
-     
+
     int wpchk(int w, int *wpts)
     {
     	int i=0;
@@ -24,14 +28,14 @@ If col[m]=j1 then col[m]:=i1;
     		if(wpts[i]==w){flg=1;}
     		i++;
     	}
-     
+
     	if (flg==0) {return 0;} else return 1;
     }
-     
-    void main()
+
+    int main()
     {
     	srand( (unsigned)time( NULL ) );
-     
+
     	//int prices[10][10];
     	int waypoint[11]={-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,1};
     	int way[11]={-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
@@ -39,8 +43,8 @@ If col[m]=j1 then col[m]:=i1;
     	int end=-1;
     	int min;
     	int imin;
-     
-    *///                        0  1  2  3  4  5  6  7  8  9
+
+    //                        0  1  2  3  4  5  6  7  8  9
     	int prices[10][10]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //0
     			    0, 0, 2, 9, 8, 0, 0, 0, 0, 0, //1
     			    0, 2, 0, 3, 0, 20,0, 0, 0, 0, //2
@@ -51,7 +55,7 @@ If col[m]=j1 then col[m]:=i1;
     			    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //7
     			    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, //8
     			    0, 0, 0, 0, 0, 0, 0, 0, 0, 0};//9
-     
+
     	printf("Enter № of start location:");
     	scanf("%i",&start);
     	printf("Enter № of finish location:");
@@ -60,7 +64,7 @@ If col[m]=j1 then col[m]:=i1;
     	int n=0;
     	int w;
     	while(waypoint[n]!=end)
-    	{	
+    	{
     		min=0;
     		w=waypoint[n];
     		for(int i=0;i<10;i++)
@@ -70,7 +74,7 @@ If col[m]=j1 then col[m]:=i1;
     		n++;
     		waypoint[n]=imin;
     	}
-     
+
     	printf("\nThe way is:\n");
     	int i=0;
     	while(waypoint[i]!=-1)
